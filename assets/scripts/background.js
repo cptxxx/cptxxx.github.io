@@ -3,10 +3,10 @@
 const root = {
   wavecolor: {
     r: 0,
-    g: 125,
+    g: 255,
     b: 0,
   },
-  rainbowSpeed: 0.5,
+  rainbowSpeed: 0.2,
   rainbow: false,
   matrixspeed: 35,
 };
@@ -46,7 +46,7 @@ function draw() {
       const rr = Math.floor(127 * Math.sin(root.rainbowSpeed * hue + 0) + 128);
       const rg = Math.floor(127 * Math.sin(root.rainbowSpeed * hue + 2) + 128);
       const rb = Math.floor(127 * Math.sin(root.rainbowSpeed * hue + 4) + 128);
-      ctx.fillStyle = "rgba(" + rr + "," + rg + "," + rb + ")";
+      ctx.fillStyle = `rgba(${rr},${rg},${rb})`;
     } else {
       ctx.fillStyle =
         "rgba(" +
@@ -69,3 +69,8 @@ window.onresize = () => {
 };
 
 setInterval(draw, root.matrixspeed);
+
+setInterval(() => {
+  if (root.rainbow) root.rainbow = false;
+  else root.rainbow = true;
+}, 10000);

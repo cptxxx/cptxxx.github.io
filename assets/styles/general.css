@@ -10,6 +10,15 @@ html {
   font-size: 62.5%;
 }
 
+*::selection {
+  color: rgb(0, 20, 0);
+  background-color: rgba(0, 200, 0, 0.7);
+}
+
+:root {
+  --window-width: 60%;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -28,6 +37,7 @@ a:link,
 a:visited {
   text-decoration: none;
   color: rgb(0, 180, 0);
+  transition: all 0.1s;
 }
 
 a:hover {
@@ -44,12 +54,13 @@ a:active {
 }
 
 #window-head {
-  width: 60%;
+  width: var(--window-width);
   height: 4rem;
   background: rgba(0, 20, 0, 0.9);
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
-  border-bottom: 1px solid green;
+  border-bottom: 0.1rem solid green;
+  box-shadow: 0 0.4rem 0.01rem green;
   backdrop-filter: blur(0.5rem);
   display: flex;
   justify-content: space-between;
@@ -68,8 +79,8 @@ a:active {
 .head_button {
   border: 1px solid darkgray;
   background: rgb(0, 20, 0);
-  width: 25px;
-  height: 25px;
+  width: 2.5rem;
+  height: 2.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -77,6 +88,7 @@ a:active {
   color: darkgray;
   font-size: 2rem;
   cursor: pointer;
+  transition: color 70ms, background 70ms;
 }
 
 .head_button:hover {
@@ -88,17 +100,22 @@ a:active {
   color: black;
 }
 
+#window_icon {
+  width: 2rem;
+  height: 2rem;
+}
+
 #main-window {
   z-index: 1;
-  width: 60%;
-  height: 80%;
+  width: var(--window-width);
+  height: 75%;
   background: rgba(0, 55, 0, 0.7);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   padding: 1.4rem 4.6rem;
   display: flex;
   flex-direction: column;
-  gap: 1.8rem;
+  gap: 2.2rem;
   backdrop-filter: blur(0.5rem);
 }
 
@@ -106,6 +123,9 @@ a:active {
   align-self: center;
   border-radius: 50%;
   user-select: none;
+  aspect-ratio: 1/1;
+  width: 15rem;
+  height: 15rem;
 }
 
 .title {
@@ -124,4 +144,23 @@ a:active {
 .text {
   line-height: 1.5;
   font-weight: 300;
+}
+
+#icons {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-content: center;
+  gap: 1.8rem;
+}
+
+.icon {
+  fill: #bbb;
+  width: 5rem;
+  height: 5rem;
+  transition: fill 0.2s;
+}
+
+.icon:hover {
+  fill: rgb(0, 180, 0);
 }
