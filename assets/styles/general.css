@@ -1,0 +1,127 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cascadia Mono", monospace;
+  font-size: 1.6rem;
+  color: #ccc;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: rgb(0, 180, 0);
+}
+
+a:hover {
+  color: rgb(0, 220, 0);
+}
+
+a:active {
+  color: green;
+}
+
+#background {
+  z-index: -1000;
+  position: absolute;
+}
+
+#window-head {
+  width: 60%;
+  height: 4rem;
+  background: rgba(0, 20, 0, 0.9);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom: 1px solid green;
+  backdrop-filter: blur(0.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  user-select: none;
+}
+
+#title,
+#buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.head_button {
+  border: 1px solid darkgray;
+  background: rgb(0, 20, 0);
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: darkgray;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.head_button:hover {
+  background: rgb(0, 5, 0);
+}
+
+.head_button:active {
+  background: darkgray;
+  color: black;
+}
+
+#main-window {
+  z-index: 1;
+  width: 60%;
+  height: 80%;
+  background: rgba(0, 55, 0, 0.7);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 1.4rem 4.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  backdrop-filter: blur(0.5rem);
+}
+
+#profile-pic {
+  align-self: center;
+  border-radius: 50%;
+  user-select: none;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2.4rem;
+  align-self: center;
+}
+
+.subtitle {
+  font-weight: 600;
+  font-size: 2rem;
+  align-self: center;
+  font-style: italic;
+}
+
+.text {
+  line-height: 1.5;
+  font-weight: 300;
+}
