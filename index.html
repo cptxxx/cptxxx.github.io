@@ -3,13 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Cpt. XXX &mdash; Computer networking enthusiast & a GNU fan"
+    />
     <title>Cpt. XXX</title>
     <link
       rel="shortcut icon"
-      href="./assets/images/favicon.png"
-      type="image/png"
+      href="./assets/images/skull.webp"
+      type="image/webp"
     />
-    <!-- <link
+    <link
       rel="stylesheet"
       media="print"
       onload='this.media="all"'
@@ -26,10 +30,7 @@
       media="print"
       onload='this.media="all"'
       href="./assets/styles/queries.css"
-    /> -->
-    <link rel="stylesheet" href="./assets/styles/fonts.css" />
-    <link rel="stylesheet" href="./assets/styles/general.css" />
-    <link rel="stylesheet" href="./assets/styles/queries.css" />
+    />
     <script src="./assets/scripts/background.js" defer></script>
     <script src="./assets/scripts/script.js" defer></script>
   </head>
@@ -38,21 +39,30 @@
     <div id="window-head">
       <div id="title">
         <img src="./assets/images/skull.webp" alt="3D skull" id="window_icon" />
-        <div class="window_title"></div>
+        <div class="window_title">
+          Cpt. XXX &copy; <span id="window_title-date"></span>
+        </div>
       </div>
       <div id="buttons">
         <div class="head_button">&dash;</div>
         <div class="head_button">&square;</div>
-        <div class="head_button">&Cross;</div>
+        <div
+          class="head_button"
+          onclick="let confirmation = confirm(`Are you sure?`); if (confirmation) window.close(); else return null;"
+        >
+          &Cross;
+        </div>
       </div>
     </div>
     <main id="main-window">
-      <img
-        src="./assets/images/cptxxx.png"
-        alt="Captain XXX's profile picture"
-        id="profile-pic"
-      />
-      <div class="title">Hi, I'm Captain XXX</div>
+      <div class="title-div">
+        <img
+          src="./assets/images/cptxxx.png"
+          alt="Captain XXX's profile picture"
+          id="profile-pic"
+        />
+        <div class="title">Hi, I'm Captain XXX</div>
+      </div>
       <div class="subtitle">Computer networking enthusiast & a GNU fan</div>
       <div class="text">
         I have experience in setting up computer networks for commercial

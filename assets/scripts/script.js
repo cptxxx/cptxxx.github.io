@@ -1,6 +1,5 @@
 "use strict";
 
-const windowTitleEl = document.querySelector(`.window_title`);
-const now = new Date();
-const windowTitle = `Cpt. XXX — ${now.getMonth()}/${now.getDay()}/${now.getFullYear()}`;
-windowTitleEl.textContent = windowTitle;
+const windowTitleEl = document.getElementById(`window_title-date`);
+const nowYear = new Date().getFullYear();
+windowTitleEl.textContent = nowYear;
